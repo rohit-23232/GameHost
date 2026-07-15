@@ -1295,3 +1295,1191 @@ footer{
     }
 
 }
+/*=========================================================
+  HERO DECORATIONS
+=========================================================*/
+
+.hero-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.hero-particles span{
+
+    position:absolute;
+
+    display:block;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    animation:particleFloat linear infinite;
+
+}
+
+/* Individual particles */
+
+.hero-particles span:nth-child(1){
+
+    width:10px;
+    height:10px;
+    left:8%;
+    top:80%;
+    animation-duration:18s;
+
+}
+
+.hero-particles span:nth-child(2){
+
+    width:18px;
+    height:18px;
+    left:22%;
+    top:92%;
+    animation-duration:22s;
+
+}
+
+.hero-particles span:nth-child(3){
+
+    width:7px;
+    height:7px;
+    left:46%;
+    top:78%;
+    animation-duration:16s;
+
+}
+
+.hero-particles span:nth-child(4){
+
+    width:14px;
+    height:14px;
+    left:68%;
+    top:95%;
+    animation-duration:20s;
+
+}
+
+.hero-particles span:nth-child(5){
+
+    width:24px;
+    height:24px;
+    left:88%;
+    top:82%;
+    animation-duration:25s;
+
+}
+
+/*=========================================================
+  HERO ENTRANCE ANIMATIONS
+=========================================================*/
+
+.hero-left{
+
+    animation:fadeLeft .9s ease;
+
+}
+
+.hero-right{
+
+    animation:fadeRight .9s ease;
+
+}
+
+.badge{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.hero h1{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero p{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.hero-buttons{
+
+    animation:fadeUp 1.4s ease;
+
+}
+
+.hero-stats{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+/*=========================================================
+  KEYFRAMES
+=========================================================*/
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+        transform:translateX(-70px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+        transform:translateX(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:translateY(0);
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    85%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-1200px);
+        opacity:0;
+
+    }
+
+}
+
+/*=========================================================
+  SERVER CARD FLOAT
+=========================================================*/
+
+.server-card{
+
+    animation:cardFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*=========================================================
+  BUTTON GLOW
+=========================================================*/
+
+.primary-btn,
+.order-btn,
+.server-card button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+.order-btn::before,
+.server-card button::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.28),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+
+.primary-btn:hover::before,
+.order-btn:hover::before,
+.server-card button:hover::before{
+
+    left:140%;
+
+}
+
+/*=========================================================
+  HERO RESPONSIVE
+=========================================================*/
+
+@media(max-width:1100px){
+
+.hero-grid{
+
+    grid-template-columns:1fr;
+
+    gap:70px;
+
+}
+
+.hero{
+
+    padding-top:150px;
+
+}
+
+.hero-right{
+
+    order:-1;
+
+}
+
+.server-card{
+
+    width:100%;
+    max-width:470px;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    padding:130px 0 80px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    letter-spacing:-1px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+}
+
+.server-card{
+
+    padding:28px;
+
+}
+
+.server-card h3{
+
+    font-size:28px;
+
+}
+
+.server-mini{
+
+    display:none;
+
+}
+
+nav{
+
+    display:none;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+.badge{
+
+    font-size:12px;
+
+    padding:10px 16px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.server-card{
+
+    border-radius:22px;
+
+}
+
+}
+/*=========================================================
+  HOSTING SERIES
+  Card Content
+=========================================================*/
+
+/*---------------------------------
+  Hardware Badge
+----------------------------------*/
+
+.hardware-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#DCE8F8;
+
+}
+
+.hardware-badge::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:0 0 12px var(--primary);
+
+}
+
+/*---------------------------------
+  Specs List
+----------------------------------*/
+
+.series-specs{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-bottom:30px;
+
+}
+
+.series-specs li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#D7E3F5;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.series-specs li::before{
+
+    content:"✓";
+
+    width:24px;
+
+    height:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+}
+
+/*---------------------------------
+  Minecraft Plans Preview
+----------------------------------*/
+
+.plan-preview{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:28px;
+
+}
+
+.plan-preview span{
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#D7E3F5;
+
+    transition:.3s;
+
+}
+
+.plan-preview span:hover{
+
+    background:rgba(53,224,161,.15);
+
+    border-color:rgba(53,224,161,.30);
+
+    color:#fff;
+
+}
+
+/*---------------------------------
+  Price Box
+----------------------------------*/
+
+.price-box{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    margin-top:12px;
+
+    margin-bottom:24px;
+
+}
+
+.price{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:6px;
+
+}
+
+.price h2{
+
+    font-size:42px;
+
+    line-height:1;
+
+    color:#fff;
+
+}
+
+.price span{
+
+    color:var(--text-soft);
+
+    font-size:15px;
+
+    margin-bottom:5px;
+
+}
+
+.price-label{
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+/*---------------------------------
+  View Plans Button
+----------------------------------*/
+
+.series-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    transition:.35s;
+
+    box-shadow:
+        0 12px 28px rgba(53,224,161,.20);
+
+}
+
+.series-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 20px 40px rgba(53,224,161,.35);
+
+}
+
+/*---------------------------------
+  Bottom Status Strip
+----------------------------------*/
+
+.series-footer{
+
+    margin-top:26px;
+
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.series-footer small{
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+}
+
+.status-live{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#BFFFE2;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status-live::before{
+
+    content:"";
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:0 0 10px var(--primary);
+
+    animation:pulse 2s infinite;
+
+}
+
+/*---------------------------------
+  Accent Border (Top)
+----------------------------------*/
+
+.series-grid .glass::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    opacity:.85;
+
+}
+
+/*---------------------------------
+  Card Hover Enhancement
+----------------------------------*/
+
+.series-grid .glass:hover h3{
+
+    color:#fff;
+
+}
+
+.series-grid .glass:hover .hardware-badge{
+
+    border-color:rgba(53,224,161,.30);
+
+    background:rgba(53,224,161,.08);
+
+}
+
+.series-grid .glass:hover .series-icon{
+
+    transform:rotate(-8deg) scale(1.08);
+
+    transition:.35s ease;
+
+  }
+/*=========================================================
+  HOSTING SERIES
+  PART 3C - Premium Effects & Responsive
+=========================================================*/
+
+/*==============================
+  Featured Card
+==============================*/
+
+.series-grid .featured{
+
+    transform:scale(1.04);
+
+    border:1px solid rgba(79,140,255,.30);
+
+    box-shadow:
+
+        0 25px 60px rgba(79,140,255,.18),
+
+        0 0 80px rgba(53,224,161,.08);
+
+}
+
+.series-grid .featured:hover{
+
+    transform:translateY(-14px) scale(1.04);
+
+}
+
+/*==============================
+  Premium Ribbon
+==============================*/
+
+.ribbon{
+
+    position:absolute;
+
+    top:22px;
+
+    right:-46px;
+
+    width:170px;
+
+    text-align:center;
+
+    padding:10px 0;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:#fff;
+
+    text-transform:uppercase;
+
+    transform:rotate(45deg);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--secondary),
+            var(--primary)
+        );
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.35);
+
+}
+
+/*==============================
+  Card Glow
+==============================*/
+
+.series-grid .glass{
+
+    isolation:isolate;
+
+}
+
+.series-grid .glass .glow{
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-120px;
+
+    opacity:0;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(53,224,161,.18),
+
+            transparent 70%
+
+        );
+
+    transition:.5s;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.series-grid .glass:hover .glow{
+
+    opacity:1;
+
+}
+
+/*==============================
+  Card Reveal Animation
+==============================*/
+
+.series-grid .glass{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:seriesReveal .8s ease forwards;
+
+}
+
+.series-grid .glass:nth-child(1){
+
+    animation-delay:.15s;
+
+}
+
+.series-grid .glass:nth-child(2){
+
+    animation-delay:.30s;
+
+}
+
+.series-grid .glass:nth-child(3){
+
+    animation-delay:.45s;
+
+}
+
+.series-grid .glass:nth-child(4){
+
+    animation-delay:.60s;
+
+}
+
+@keyframes seriesReveal{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==============================
+  Icon Animation
+==============================*/
+
+.series-icon{
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+.series-grid .glass:hover .series-icon{
+
+    transform:
+
+        translateY(-6px)
+
+        rotate(-8deg)
+
+        scale(1.08);
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.30);
+
+}
+
+/*==============================
+  Price Animation
+==============================*/
+
+.price h2{
+
+    transition:.35s;
+
+}
+
+.series-grid .glass:hover .price h2{
+
+    color:var(--primary);
+
+}
+
+/*==============================
+  Responsive
+==============================*/
+
+@media(max-width:1200px){
+
+.series-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.series{
+
+    padding:90px 0;
+
+}
+
+.section-title h2{
+
+    font-size:38px;
+
+}
+
+.section-title p{
+
+    font-size:16px;
+
+}
+
+.series-grid{
+
+    grid-template-columns:1fr;
+
+    gap:24px;
+
+}
+
+.series-grid .featured{
+
+    transform:none;
+
+}
+
+.series-grid .featured:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.ribbon{
+
+    right:-55px;
+
+    font-size:11px;
+
+}
+
+.price h2{
+
+    font-size:36px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.series-grid .glass{
+
+    padding:26px;
+
+}
+
+.series-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:28px;
+
+}
+
+.series-grid h3{
+
+    font-size:24px;
+
+}
+
+.series-grid h4{
+
+    font-size:16px;
+
+}
+
+.price-box{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+.series-btn{
+
+    padding:15px;
+
+}
+
+}
+
+/*==============================
+  Accessibility
+==============================*/
+
+.series-btn:focus,
+.plan-preview span:focus{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:4px;
+
+}
