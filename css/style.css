@@ -1,40 +1,516 @@
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#10151c;
-    color:white;
+/*=========================================================
+  BlockForge Hosting
+  Premium Minecraft Hosting Website
+  File: assets/css/style.css
+  Part: 1
+=========================================================*/
+
+/*==============================
+  Google Font
+==============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/*==============================
+  Root Variables
+==============================*/
+
+:root{
+
+    --bg:#060912;
+    --bg2:#0B1220;
+    --surface:#101826;
+
+    --glass:rgba(255,255,255,.07);
+    --glass-border:rgba(255,255,255,.12);
+
+    --text:#ffffff;
+    --text-soft:#AEB9CC;
+
+    --primary:#35E0A1;
+    --secondary:#4F8CFF;
+    --purple:#8B5CF6;
+
+    --danger:#ff5f7a;
+    --warning:#ffc857;
+
+    --radius:22px;
+
+    --shadow:
+        0 15px 35px rgba(0,0,0,.45);
+
+    --transition:.35s ease;
+
 }
 
+/*==============================
+  Reset
+==============================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+/*==============================
+  Selection
+==============================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:#000;
+
+}
+
+/*==============================
+  Scrollbar
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        180deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    border-radius:30px;
+
+}
+
+/*==============================
+  Typography
+==============================*/
+
+h1{
+
+    font-size:72px;
+
+    font-weight:900;
+
+    line-height:1.1;
+
+}
+
+h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+}
+
+h3{
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+h4{
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+p{
+
+    color:var(--text-soft);
+
+    font-size:17px;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/*==============================
+  Container
+==============================*/
+
+.container{
+
+    width:min(1250px,92%);
+
+    margin:auto;
+
+}
+
+/*==============================
+  Animated Background
+==============================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #0f1930,
+    var(--bg));
+
+}
+
+.blur{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.55;
+
+    animation:float 16s infinite ease-in-out;
+
+}
+
+.blur.blue{
+
+    width:420px;
+
+    height:420px;
+
+    background:#2979ff;
+
+    top:-120px;
+
+    left:-100px;
+
+}
+
+.blur.green{
+
+    width:380px;
+
+    height:380px;
+
+    background:#00ff9d;
+
+    bottom:-120px;
+
+    right:-100px;
+
+}
+
+.blur.purple{
+
+    width:350px;
+
+    height:350px;
+
+    background:#8b5cf6;
+
+    top:35%;
+
+    left:45%;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(50px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==============================
+  Glass Effect
+==============================*/
+
+.glass{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+/*==============================
+  Header
+==============================*/
+
 header{
-    background:#1c2530;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(5,9,18,.55);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+header .container{
+
+    height:82px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:20px;
+
+}
+
+/*==============================
+  Logo
+==============================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:24px;
+
+    font-weight:800;
+
+}
+
+.logo-box{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    box-shadow:
+
+    0 0 25px rgba(79,140,255,.45),
+
+    0 0 45px rgba(53,224,161,.30);
+
+}
+
+/*==============================
+  Navigation
+==============================*/
+
+nav{
+
+    display:flex;
+
+    gap:36px;
+
 }
 
 nav a{
+
+    color:var(--text-soft);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+nav a:hover{
+
     color:white;
-    text-decoration:none;
-    margin-left:20px;
+
 }
 
-.hero{
-    text-align:center;
-    padding:100px 20px;
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-10px;
+
+    width:0;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    transition:.35s;
+
 }
 
-.btn{
-    display:inline-block;
-    background:#00c853;
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/*==============================
+  Nav Buttons
+==============================*/
+
+.nav-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.login-btn{
+
     color:white;
-    padding:15px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    margin-top:20px;
+
+    padding:12px 24px;
+
+    border-radius:14px;
+
+    transition:.35s;
+
 }
 
-.cards{
+.login-btn:hover{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.order-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color:white;
+
+    padding:13px 28px;
+
+    border-radius:16px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 25px rgba(53,224,161,.25);
+
+}
+
+.order-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 15px 35px rgba(53,224,161,.40);
+
+    }.cards{
     display:flex;
     justify-content:center;
     gap:20px;
@@ -53,4 +529,769 @@ footer{
     text-align:center;
     padding:30px;
     background:#1c2530;
+}
+/*=========================================================
+  HERO SECTION - PART 2A
+=========================================================*/
+
+.hero{
+
+    position:relative;
+
+    padding:170px 0 120px;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    right:-180px;
+
+    top:-200px;
+
+    background:radial-gradient(
+        circle,
+        rgba(79,140,255,.18),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+/*==============================
+  Hero Left
+==============================*/
+
+.hero-left{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    margin-bottom:28px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:#E6EEF9;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.badge::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:0 0 15px var(--primary);
+
+}
+
+.hero h1{
+
+    max-width:760px;
+
+    letter-spacing:-2px;
+
+    margin-bottom:24px;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #d9e6ff 70%,
+        #9fb4d9
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    max-width:640px;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    margin-bottom:42px;
+
+    color:#B7C5DB;
+
+}
+
+/*==============================
+  Hero Buttons
+==============================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:55px;
+
+}
+
+.primary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:17px 34px;
+
+    border-radius:18px;
+
+    font-weight:700;
+
+    font-size:16px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    box-shadow:
+
+        0 15px 35px rgba(53,224,161,.22);
+
+    transition:all .35s ease;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 20px 45px rgba(53,224,161,.40);
+
+}
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:17px 34px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.05);
+
+    color:#fff;
+
+    transition:all .35s ease;
+
+}
+
+.secondary-btn:hover{
+
+    background:rgba(255,255,255,.10);
+
+    border-color:rgba(255,255,255,.22);
+
+}
+
+/*==============================
+  Hero Stats
+==============================*/
+
+.hero-stats{
+
+    display:flex;
+
+    gap:28px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-stats div{
+
+    min-width:150px;
+
+    padding:24px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s;
+
+}
+
+.hero-stats div:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(53,224,161,.35);
+
+}
+
+.hero-stats h2{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+    background:linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero-stats span{
+
+    color:#AEB9CC;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+/*=========================================================
+  HERO RIGHT
+  Premium Server Showcase Card
+=========================================================*/
+
+.hero-right{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Floating glow */
+
+.hero-right::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:560px;
+
+    height:560px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+        rgba(53,224,161,.16),
+        transparent 72%);
+
+    filter:blur(35px);
+
+    animation:glowRotate 12s linear infinite;
+
+    z-index:-2;
+
+}
+
+/* Small decorative orb */
+
+.hero-right::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    top:-35px;
+
+    right:40px;
+
+    background:
+        radial-gradient(circle,
+        rgba(79,140,255,.28),
+        transparent 70%);
+
+    filter:blur(22px);
+
+    z-index:-1;
+
+}
+
+/*=========================================================
+  Server Card
+=========================================================*/
+
+.server-card{
+
+    width:420px;
+
+    padding:34px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    transition:.45s;
+
+}
+
+.server-card:hover{
+
+    transform:
+        translateY(-12px)
+        rotateX(4deg);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.45),
+
+        0 0 40px rgba(53,224,161,.18);
+
+}
+
+/* Glass shine */
+
+.server-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:650px;
+
+    left:-180px;
+
+    top:-180px;
+
+    background:
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.18),
+
+            transparent
+
+        );
+
+    transform:rotate(24deg);
+
+    transition:1s;
+
+}
+
+.server-card:hover::before{
+
+    left:520px;
+
+}
+
+/*=========================================================
+  Status Badge
+=========================================================*/
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:max-content;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    margin-bottom:28px;
+
+    background:rgba(25,255,150,.10);
+
+    border:1px solid rgba(53,224,161,.25);
+
+    color:#E8FFF5;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.online{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:
+
+        0 0 8px var(--primary),
+
+        0 0 18px var(--primary);
+
+    animation:pulse 1.8s infinite;
+
+}
+
+/*=========================================================
+  Server Headings
+=========================================================*/
+
+.server-card h3{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d5e7ff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.server-card h4{
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    margin-bottom:28px;
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+  Feature List
+=========================================================*/
+
+.server-card ul{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:36px;
+
+}
+
+.server-card li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#D6E3F5;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.server-card li::before{
+
+    content:"✓";
+
+    width:26px;
+
+    height:26px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--secondary),
+            var(--primary)
+        );
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+}
+
+/*=========================================================
+  Deploy Button
+=========================================================*/
+
+.server-card button{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--secondary),
+            var(--primary)
+        );
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 12px 28px rgba(53,224,161,.28);
+
+}
+
+.server-card button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 20px 42px rgba(53,224,161,.42);
+
+}
+
+/*=========================================================
+  Decorative Mini Cards
+=========================================================*/
+
+.server-mini{
+
+    position:absolute;
+
+    padding:16px 22px;
+
+    border-radius:18px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+}
+
+.server-mini h5{
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.server-mini span{
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+}
+
+.server-mini.cpu{
+
+    left:-60px;
+
+    top:60px;
+
+}
+
+.server-mini.latency{
+
+    right:-55px;
+
+    bottom:70px;
+
+}
+
+/*=========================================================
+  Animations
+=========================================================*/
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:scale(1.4);
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes glowRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
 }
